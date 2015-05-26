@@ -1,0 +1,62 @@
+
+import java.util.*;
+import javax.mail.*;
+import javax.mail.Message.RecipientType;
+import javax.mail.internet.*;
+
+public class EmailVerify {
+	
+	private String from;
+	private String to;
+	private String subject;
+	private String text;
+	
+	public EmailVerify(String from, String to, String object, String text){
+		this.from = from;
+		this.to = to;
+		this.subject = subject;
+		this.text = text;
+	}
+	
+	public void send(){
+		
+		String username = "aerothosis@gmail.com";
+		String password = "TATERtot1113!!@@";
+		
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+		
+		Session mailSession = Session.getInstance(props/*, 
+				new javax.mail.Authenticator() {
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(username, password);
+					}
+				}*/
+				);
+		Message simpleMessage = new MimeMessage(mailSession);
+		
+		//InternetAddress fromAddress = null;
+		InternetAddress toAddress = null;
+		try{
+			fromAddress = new InternetAddress(from);
+			toAddress = new InternetAddress(to);
+		}catch(AddressException e){
+			e.printStackTrace();
+		}
+		
+		try{
+			simpleMessage.setFrom(new InternetAddress(from));
+			simpleMessage.setRecipient(RecipientType.TO, new InternetAddress(to));
+			simpleMessage.setSubject(subject);
+			simpleMessage.setText(text);
+			Transport.send(simpleMessage);
+			
+		}catch(MessagingException e){
+			e.printStackTrace();
+		}
+	}
+
+}

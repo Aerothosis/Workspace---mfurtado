@@ -1,0 +1,19 @@
+import javax.swing.*;
+
+
+public class RegUsrActivate extends JFrame {
+
+	
+	
+	RegUsrActivate(){
+		
+	}
+	
+	public static void main(String[] args){
+		CreateGUI();
+	}
+	
+	static void CreateGUI(){
+		
+	}
+}

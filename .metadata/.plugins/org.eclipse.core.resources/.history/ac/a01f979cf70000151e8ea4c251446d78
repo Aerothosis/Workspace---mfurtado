@@ -1,0 +1,31 @@
+import javax.swing.*;
+
+import java.awt.event.*;
+
+
+public class ResetPassOne extends JFrame implements ActionListener{
+
+	JLabel label;
+	
+	static JFrame frame;
+	
+	ResetPassOne(){
+		this.setSize(300, 300);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Reset Password");
+		this.setLayout(null);
+	}
+	
+	public static void main(String[] args){
+		CreateGUI();
+	}
+	
+	public static void CreateGUI(){
+		frame = new ResetPassOne();
+		frame.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent ae) {
+		
+	}
+}

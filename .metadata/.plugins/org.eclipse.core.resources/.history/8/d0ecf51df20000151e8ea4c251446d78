@@ -1,0 +1,30 @@
+
+import javax.swing.*;
+
+
+public class RegUsrActivate extends JFrame {
+
+	JLabel actvL = new JLabel("Activation Code");
+	static JTextField actvIn = new JTextField("");
+	JButton submit = new JButton ("Submit");
+	
+	static JFrame frame;
+	
+	RegUsrActivate(){
+		this.setSize(300, 300);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Activate Account");
+		this.setLayout(null);
+		
+		
+	}
+	
+	public static void main(String[] args){
+		CreateGUI();
+	}
+	
+	static void CreateGUI(){
+		frame = new RegUsrActivate();
+		frame.setVisible(true);
+	}
+}

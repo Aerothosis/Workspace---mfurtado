@@ -1,0 +1,38 @@
+
+import javax.swing.*;
+
+import java.awt.event.*;
+
+
+public class RegUsrActivate extends JFrame implements ActionListener{
+
+	JLabel actvL = new JLabel("Activation Code");
+	static JTextField actvIn = new JTextField("");
+	JButton submit = new JButton ("Submit");
+	
+	static JFrame frame;
+	
+	RegUsrActivate(){
+		this.setSize(300, 300);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Activate Account");
+		this.setLayout(null);
+		
+		actvL.setSize(150, 30);
+		actvL.setLocation(10, 10);
+		this.add(actvL);
+	}
+	
+	public static void main(String[] args){
+		CreateGUI();
+	}
+	
+	static void CreateGUI(){
+		frame = new RegUsrActivate();
+		frame.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent ae) {
+		
+	}
+}

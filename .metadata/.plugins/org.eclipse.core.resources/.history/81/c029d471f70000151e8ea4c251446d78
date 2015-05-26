@@ -1,0 +1,25 @@
+import javax.swing.*;
+
+
+public class ResetPassOne extends JFrame {
+
+	JLabel label;
+	
+	static JFrame frame;
+	
+	ResetPassOne(){
+		this.setSize(300, 300);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Reset Password");
+		this.setLayout(null);
+	}
+	
+	public static void main(String[] args){
+		CreateGUI();
+	}
+	
+	public static void CreateGUI(){
+		frame = new ResetPassOne();
+		frame.setVisible(true);
+	}
+}
